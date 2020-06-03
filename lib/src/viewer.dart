@@ -225,7 +225,7 @@ class _PDFViewerState extends State<PDFViewer> {
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: (widget.showNavigation || widget.document.count > 1)
+      bottomNavigationBar: widget.showNavigation
           ? widget.navigationBuilder != null
               ? widget.navigationBuilder(
                   context,
@@ -298,7 +298,7 @@ class _PDFViewerState extends State<PDFViewer> {
                     ],
                   ),
                 )
-          : Container(),
+          : null,
     );
   }
 }
