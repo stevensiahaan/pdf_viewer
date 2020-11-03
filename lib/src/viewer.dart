@@ -138,19 +138,14 @@ class _PDFViewerState extends State<PDFViewer> {
 
   Widget _drawIndicator() {
     Widget child = GestureDetector(
-        onTap:
-            widget.showPicker && widget.document.count > 1 ? _pickPage : null,
+        onTap: widget.showPicker && widget.document.count > 1 ? _pickPage : null,
         child: Container(
-            padding:
-                EdgeInsets.only(top: 4.0, left: 16.0, bottom: 4.0, right: 16.0),
+            padding: EdgeInsets.only(top: 4.0, left: 16.0, bottom: 4.0, right: 16.0),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: widget.indicatorBackground),
+                borderRadius: BorderRadius.circular(4.0), color: widget.indicatorBackground),
             child: Text("$_pageNumber/${widget.document.count}",
                 style: TextStyle(
-                    color: widget.indicatorText,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400))));
+                    color: widget.indicatorText, fontSize: 16.0, fontWeight: FontWeight.w400))));
 
     switch (widget.indicatorPosition) {
       case IndicatorPosition.topLeft:
@@ -209,9 +204,7 @@ class _PDFViewerState extends State<PDFViewer> {
                   )
                 : _pages[index],
           ),
-          (widget.showIndicator && !_isLoading)
-              ? _drawIndicator()
-              : Container(),
+          (widget.showIndicator && !_isLoading) ? _drawIndicator() : Container(),
         ],
       ),
       floatingActionButton: widget.showPicker && widget.document.count > 1
@@ -252,7 +245,7 @@ class _PDFViewerState extends State<PDFViewer> {
                       ),
                       Expanded(
                         child: IconButton(
-                          icon: Icon(Icons.chevron_left),
+                          icon: Icon(Icons.access_alarm),
                           tooltip: widget.tooltip.previous,
                           onPressed: _pageNumber == 1
                               ? null
@@ -265,9 +258,7 @@ class _PDFViewerState extends State<PDFViewer> {
                                 },
                         ),
                       ),
-                      widget.showPicker
-                          ? Expanded(child: Text(''))
-                          : SizedBox(width: 1),
+                      widget.showPicker ? Expanded(child: Text('')) : SizedBox(width: 1),
                       Expanded(
                         child: IconButton(
                           icon: Icon(Icons.chevron_right),
